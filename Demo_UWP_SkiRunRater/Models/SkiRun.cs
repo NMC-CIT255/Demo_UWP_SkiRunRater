@@ -12,17 +12,6 @@ namespace Demo_UWP_SkiRunRater
         public string Name { get; set; }
         public int Vertical { get; set; }
 
-        public SkiRun()
-        {
-
-        }
-
-        public SkiRun(int id, string Name, int vertical)
-        {
-            this.ID = id;
-            this.Name = Name;
-            this.Vertical = vertical;
-        }
     }
 }
 

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Demo_UWP_SkiRunRater;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +23,12 @@ namespace Demo_UWP_SkiRunRater
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private List<SkiRun> SkiRuns;
+
         public MainPage()
         {
             this.InitializeComponent();
+            SkiRuns = SkiRunManager.GetSkiRuns();
         }
     }
 }
