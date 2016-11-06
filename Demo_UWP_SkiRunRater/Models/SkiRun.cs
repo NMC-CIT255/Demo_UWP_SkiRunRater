@@ -11,6 +11,7 @@ namespace Demo_UWP_SkiRunRater
         public int ID { get; set; }
         public string Name { get; set; }
         public int Vertical { get; set; }
+        public string SkiRunImage { get; set; }
 
     }
 }

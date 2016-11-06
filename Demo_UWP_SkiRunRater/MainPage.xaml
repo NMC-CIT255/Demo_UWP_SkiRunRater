@@ -7,25 +7,44 @@
       xmlns:data="using:Demo_UWP_SkiRunRater"
       mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
+    <Page.Resources>
+        <DataTemplate x:DataType="data:SkiRun"
+                      x:Key="SkiRunDataTemplate">
+            <StackPanel HorizontalAlignment="Center"
+                        BorderBrush="#FFF4B238"
+                        BorderThickness="1"
+                        CornerRadius="2"
+                        Background="#FFF4B238"
+                        Opacity="0.6">
+                <Image Width="200"
+                       Source="{x:Bind SkiRunImage}" />
+                <TextBlock FontSize="16"
+                           Width="200"
+                           Margin="10"
+                           Text="{x:Bind Name}" />
+                <TextBlock FontSize="16"
+                           Width="200"
+                           Margin="10"
+                           Text="{x:Bind Vertical}" />
+                <TextBlock FontSize="16"
+                           Margin="10, 0, 0, 0"
+                           Text="Feet" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <GridView ItemsSource="{x:Bind SkiRuns}">
-            <GridView.ItemTemplate>
-                <DataTemplate x:DataType="data:SkiRun">
-                    <StackPanel>
-                        <TextBlock FontSize="16"
-                                   Width="200"
-                                   Text="{x:Bind Name}" />
-                        <TextBlock FontSize="16"
-                                   Width="200"
-                                   Text="{x:Bind Vertical}" />
-                    </StackPanel>
-                </DataTemplate>
-            </GridView.ItemTemplate>
+        <GridView ItemsSource="{x:Bind SkiRuns}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"
+                  ItemTemplate="{StaticResource SkiRunDataTemplate}"
+                  Margin="10,0,-10,0">
         </GridView>
 
         <TextBlock Grid.Row="1"

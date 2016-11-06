@@ -30,5 +30,11 @@ namespace Demo_UWP_SkiRunRater
             this.InitializeComponent();
             SkiRuns = SkiRunManager.GetSkiRuns();
         }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var skiRun = (SkiRun)e.ClickedItem;
+            ResultTextBlock.Text = $"You selected {skiRun.Name}";
+        }
     }
 }
