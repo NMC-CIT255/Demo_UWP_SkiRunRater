@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Demo_UWP_SkiRunRater;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -35,6 +36,9 @@ namespace Demo_UWP_SkiRunRater
         {
             var skiRun = (SkiRun)e.ClickedItem;
             ResultTextBlock.Text = $"You selected {skiRun.Name}";
+
+            BitmapImage bitmapImage = new BitmapImage(new Uri(this.BaseUri, $"/{skiRun.SkiRunImage}"));
+            SkiRunImage.Source = bitmapImage;
         }
     }
 }
