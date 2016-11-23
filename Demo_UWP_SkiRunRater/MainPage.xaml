@@ -47,27 +47,30 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        <GridView ItemsSource="{x:Bind SkiRuns}"
-                  Grid.Row="0"
-                  IsItemClickEnabled="True"
-                  ItemClick="GridView_ItemClick"
-                  ItemTemplate="{StaticResource SkiRunDataTemplate}"
-                  Margin="10">
-        </GridView>
+        <StackPanel>
+            <GridView ItemsSource="{x:Bind SkiRuns}"
+                      Grid.Row="0"
+                      IsItemClickEnabled="True"
+                      ItemClick="GridView_ItemClick"
+                      ItemTemplate="{StaticResource SkiRunDataTemplate}"
+                      Margin="10">
+            </GridView>
 
-        <TextBlock Grid.Row="1"
-                   Name="ResultTextBlock"
-                   FontSize="14"
-                   Foreground="Red"
-                   FontWeight="Bold"
-                   Text="Hello John"
-                   Margin="0,20,0,0" />
-        <Image Width="200"
-               Name="SkiRunImage"
-               Grid.Row="1"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Top"
-               Margin="10"
-               Source="Assets/ski_run_1.jpg" />
+            <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       Name="ResultTextBlock"
+                       FontSize="14"
+                       Foreground="Red"
+                       FontWeight="Bold"
+                       Text="Choose a Ski Run."
+                       Margin="0,20,0,0" />
+            <Image Width="200"
+                   Name="SkiRunImage"
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="10"
+                    />
+        </StackPanel>
     </Grid>
 </Page>
